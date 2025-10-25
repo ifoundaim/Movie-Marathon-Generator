@@ -18,6 +18,9 @@ A Python tool for generating themed movie marathons from a curated collection of
 4. **Pulp Fiction** (1994) - Crime - 154min - 8.9/10
 5. **Forrest Gump** (1994) - Drama - 142min - 8.8/10
 
+#ADDED SCOTT PILGRIM VERSUS THE WORLD
+#ADDED THE MATRIX
+
 ## Usage
 
 ### Basic Usage
