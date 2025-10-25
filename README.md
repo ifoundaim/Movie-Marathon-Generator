@@ -1,22 +1,23 @@
 # 🎬 Movie Marathon Generator
 
-A Python tool for generating themed movie marathons from a curated collection of films.
+A simple Python script that displays a curated list of films for your movie marathon watch session.
 
 ## Features
 
-- **Curated Movie Collection**: Pre-loaded with 5 classic films
-- **Flexible Marathon Generation**: Create marathons by genre, rating, or duration
-- **Smart Duration Management**: Set maximum marathon length
-- **Quality Filtering**: Filter by minimum rating
-- **Multiple Marathon Types**: Random, genre-specific, and high-rated marathons
+- **Pre-selected Movie Collection**: Curated list of 7 classic films
+- **Clean Display**: Prints one movie per line with sequential numbering
+- **Smart Skipping**: Automatically skips blank entries in the list
+- **Intermission Support**: Automatically stops printing when it encounters "intermission" in the list
 
-## Sample Movies Included
+## Movies Included
 
-1. **The Shawshank Redemption** (1994) - Drama - 142min - 9.3/10
-2. **The Godfather** (1972) - Crime - 175min - 9.2/10  
-3. **The Dark Knight** (2008) - Action - 152min - 9.0/10
-4. **Pulp Fiction** (1994) - Crime - 154min - 8.9/10
-5. **Forrest Gump** (1994) - Drama - 142min - 8.8/10
+1. The Godfather (1972)
+2. Inception (2010)
+3. Pulp Fiction (1994)
+4. Interstellar (2014)
+5. The Shawshank Redemption (1994)
+6. Scott Pilgrim vs. the World (2010)
+7. The Matrix (1999)
 
 #ADDED SCOTT PILGRIM VERSUS THE WORLD
 #ADDED THE MATRIX
@@ -25,53 +26,31 @@ A Python tool for generating themed movie marathons from a curated collection of
 
 ### Basic Usage
 
+Simply run the script to see your movie marathon list:
+
 ```bash
-python movie_marathon.py
+python3 movie_marathon.py
 ```
 
-This will generate several sample marathons:
-- Random 3-movie marathon
-- Drama marathon (2 movies)
-- High-rated marathon (6 hours max)
-- Crime marathon (2 movies)
+### Program Behavior
 
-### Programmatic Usage
+- Displays each movie on a separate line with sequential numbering
+- Skips any blank or whitespace-only entries in the list
+- Stops printing when it encounters the word "intermission" (case-insensitive)
 
-```python
-from movie_marathon import MarathonGenerator, Movie
+## Example Output
 
-# Create generator
-generator = MarathonGenerator()
-
-# Generate a random 3-movie marathon
-marathon = generator.generate_marathon(num_movies=3)
-generator.display_marathon(marathon, "My Marathon")
-
-# Generate a drama marathon with 6-hour limit
-drama_marathon = generator.generate_marathon(
-    num_movies=4,
-    max_duration_hours=6,
-    genre_filter="Drama"
-)
-
-# Add your own movie
-new_movie = Movie(
-    title="Inception",
-    year=2010,
-    genre="Sci-Fi",
-    duration_minutes=148,
-    director="Christopher Nolan",
-    rating=8.8
-)
-generator.add_movie(new_movie)
 ```
+🎬 Movie Marathon Watch List 🎬
 
-## Marathon Generation Options
-
-- `num_movies`: Number of movies in the marathon
-- `max_duration_hours`: Maximum total duration in hours
-- `genre_filter`: Filter by specific genre (Drama, Crime, Action, etc.)
-- `min_rating`: Minimum rating threshold (0.0-10.0)
+1. The Godfather (1972)
+2. Inception (2010)
+3. Pulp Fiction (1994)
+4. Interstellar (2014)
+5. The Shawshank Redemption (1994)
+6. Scott Pilgrim vs. the World (2010)
+7. The Matrix (1999)
+```
 
 ## Requirements
 
@@ -85,38 +64,21 @@ generator.add_movie(new_movie)
 3. Run the script:
 
 ```bash
-python movie_marathon.py
+python3 movie_marathon.py
 ```
 
-## Example Output
+## Customization
 
-```
-🎬 Movie Marathon Generator
-========================================
+To modify the marathon list, edit the `MARATHON_LIST` in `movie_marathon.py`:
 
-Available Movies (5):
-  • The Shawshank Redemption (1994) - 142min - 9.3/10
-  • The Godfather (1972) - 175min - 9.2/10
-  • The Dark Knight (2008) - 152min - 9.0/10
-  • Pulp Fiction (1994) - 154min - 8.9/10
-  • Forrest Gump (1994) - 142min - 8.8/10
-
-============================================================
-
-🎬 Random 3-Movie Marathon
-==================================================
-1. The Dark Knight (2008) - 152min - 9.0/10
-2. The Shawshank Redemption (1994) - 142min - 9.3/10
-3. Pulp Fiction (1994) - 154min - 8.9/10
-
-Total Duration: 7h 28m
-Average Rating: 9.1/10
+```python
+MARATHON_LIST = [
+    "Your Movie Title (Year)",
+    # Add more movies here
+]
 ```
 
-## Future Enhancements
-
-- Integration with movie databases (TMDB, OMDb)
-- User movie collection management
-- Advanced filtering options (decade, director, etc.)
-- Marathon scheduling with breaks
-- Export marathon lists to various formats
+Notes:
+- Add blank entries (`""`) if you want to reserve space but skip display
+- Add an entry with "intermission" to stop printing at that point
+- Sequential numbering is maintained automatically
